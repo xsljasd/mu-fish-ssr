@@ -1,0 +1,38 @@
+{
+  "executionRoleArn": "arn:aws:iam::771350349623:role/ECSTaskDefinitionRole",
+  "containerDefinitions": [
+    {
+      "logConfiguration": {
+        "logDriver": "none",
+        "secretOptions": null,
+        "options": null
+      },
+      "environment": [],
+      "portMappings": [
+        {
+          "hostPort": 0,
+          "protocol": "tcp",
+          "containerPort": 3000
+        }
+      ],
+      "cpu": 0,
+      "repositoryCredentials": {
+        "credentialsParameter": "arn:aws:secretsmanager:eu-west-1:771350349623:secret:ecs/docker-github-EvtP4B"
+      },
+      "mountPoints": [],
+      "volumesFrom": [],
+      "image": "ghcr.io/lomray-software/vite-template/web:latest-prod",
+      "name": "web",
+      "essential": true
+    }
+  ],
+  "placementConstraints": [],
+  "memory": "100",
+  "taskRoleArn": "arn:aws:iam::771350349623:role/ECSTaskDefinitionRole",
+  "family": "vite-template",
+  "requiresCompatibilities": [
+    "EC2"
+  ],
+  "networkMode": "bridge",
+  "volumes": []
+}
